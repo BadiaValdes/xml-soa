@@ -3,6 +3,7 @@ package com.test.xml;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.test.xml.test.methods.TestMethods;
+import com.test.xml.test.methods.TestXSD;
 import com.test.xml.test.objects.TestValues;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,6 +21,7 @@ public class XmlApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception{
+			TestXSD.transformXMLstoXML();
 
 	}
 

@@ -7,12 +7,9 @@ import com.test.xml.test.objects.TestObjects;
 import com.test.xml.test.objects.TestValues;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.util.LinkedList;
 
 /**
  * Test class to implement XML serialization and deserialization
@@ -38,7 +35,7 @@ public class TestMethods {
      * @throws IOException
      */
     public static void serializeJavaToXMLFile() throws IOException {
-       mapper.writeValue(new File("xmlTest.xml"), TestValues.TEST_VALUE_1);
+       mapper.writeValue(new File("src/main/resources/static/xmlTest.xml"), TestValues.TEST_VALUE_1);
         log.info("Object was written");
     }
 
@@ -58,7 +55,7 @@ public class TestMethods {
      * @throws IOException
      */
     public static void deserializeXmlToJavaFromFile() throws IOException {
-        File localFile = new File("xmlTest.xml");
+        File localFile = new File("src/main/resources/static/xmlTest.xml");
         TestObjects result = mapper.readValue(localFile, TestObjects.class);
         log.info(result.toString());
     }
@@ -80,7 +77,7 @@ public class TestMethods {
      * @throws IOException
      */
     public static void serializationListObjectToXMLFile() throws IOException {
-        mapper.writeValue(new File("list.xml"), TestValues.NESTED_VALUE_1());
+        mapper.writeValue(new File("src/main/resources/static/list.xml"), TestValues.NESTED_VALUE_1());
     }
 
     /**
@@ -88,7 +85,7 @@ public class TestMethods {
      * @throws IOException
      */
     public static void serializationListObjectToXMLFileMultiple() throws IOException {
-        mapper.writeValue(new File("list_list.xml"), TestValues.LIST_NESTED_VALUE_1());
+        mapper.writeValue(new File("src/main/resources/static/list_list.xml"), TestValues.LIST_NESTED_VALUE_1());
     }
 
     // Deserialize with list
@@ -98,7 +95,7 @@ public class TestMethods {
      * @throws IOException
      */
     public static void deserializationXMLToListObjectFile() throws IOException {
-        File file = new File("list.xml");
+        File file = new File("src/main/resources/static/list.xml");
         TestObjects t = mapper.readValue(file, TestObjects.class);
         log.info(t.toString());
     }
