@@ -1,6 +1,5 @@
 package com.test.xml.test.methods;
 
-import com.test.xml.XmlApplication;
 import com.test.xml.test.objects.xsd.Address;
 import com.test.xml.test.objects.xsd.Employee;
 import com.test.xml.test.objects.xsd.Employees;
@@ -10,8 +9,6 @@ import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.SchemaOutputResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.naming.spi.ObjectFactory;
 import javax.xml.transform.*;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
@@ -77,8 +74,6 @@ public class TestXSD {
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         marshaller.marshal(employees, new File("src/main/resources/static/employees.xml"));
     }
-
-
 
     /**
      * Este metodo nos permite convertir de XML a un objeto en java
