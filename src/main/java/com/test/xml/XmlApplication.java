@@ -2,6 +2,7 @@ package com.test.xml;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.test.xml.test.methods.TestMethods;
 import com.test.xml.test.objects.TestValues;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,16 +20,8 @@ public class XmlApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception{
-		try {
-			SerializeJavaToXMLAsString();
-		} catch (JsonProcessingException e) {
-			throw new RuntimeException(e);
-		}
+
 	}
 
-	public void SerializeJavaToXMLAsString() throws JsonProcessingException {
-		XmlMapper mapper = new XmlMapper();
-		String objectToXml = mapper.writeValueAsString(TestValues.test1);
-		log.info(objectToXml);
-	}
+
 }
